@@ -1,0 +1,7 @@
+*.gz
+*.tar
+*/project/project
+*/target
+*/*/target
+spark/
+*/apache-flume*
