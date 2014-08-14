@@ -5,3 +5,4 @@
 */*/target
 spark/
 */apache-flume*
+*.log

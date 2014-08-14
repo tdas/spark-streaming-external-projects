@@ -60,30 +60,6 @@ untar_if_not_exist ()
   fi
 }
 
-download_spark_if_not_existsi_old ()
-{
-  SPARK_DIR=$1
-  SPARK_BINARY_URL=$2
-
-  if [[ ! -d "$SPARK_DIR" ]] ; then
-    echo "Spark directory $SPARK_DIR not found, downloading it"
-    rm -rf spark*
-    download_if_not_exist "spark.tgz" "$SPARK_BINARY_URL" || quit
-    echo "Extracting Spark"
-    tar xvf "spark.tgz"
-    existing_spark_dirs=`find . -name spark-*-bin* `
-    echo "[$existing_spark_dirs]"
-    if [[ -n "$existing_spark_dirs" ]] ; then
-      temp=( $existing_spark_dirs )
-      echo mv "${temp[0]}" $SPARK_DIR
-      mv "${temp[0]}" $SPARK_DIR
-    fi
-    if [[ ! -d "$SPARK_DIR" ]] ; then
-      echo "Could not download spark, please manually download your desired binary release of Spark and create directory $ROOT_DIR/spark"
-      quit
-    fi 
-  fi
-}
 
 download_spark_if_not_exists ()
 {
