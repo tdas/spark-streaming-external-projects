@@ -5,4 +5,5 @@
 */*/target
 spark/
 */apache-flume*
+*/kafka*
 *.log

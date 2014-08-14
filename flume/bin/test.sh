@@ -1,11 +1,11 @@
 #!/bin/bash
 
-
 FLUME_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
 FLUME_LOG=$FLUME_DIR/flume.log
 SPARK_LOG=$FLUME_DIR/spark.log
 
-# run Flume in background
+# Run Flume in background
 $FLUME_DIR/bin/run-flume.sh > $FLUME_LOG 2>&1 & 
 FLUME_PID=$!
 echo "Started Flume with logs going to $FLUME_LOG"

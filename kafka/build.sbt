@@ -1,13 +1,12 @@
 import AssemblyKeys._ 
 
-name := "flume-app"
+name := "kafka-app"
 
 scalaVersion := "2.10.4"
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-streaming" % System.getenv.get("SPARK_VERSION") % "provided",
-  "org.slf4j" % "slf4j-api" % "1.6.1",  // Workaround for bug IVY-987
-  "org.apache.spark" %% "spark-streaming-flume" % System.getenv.get("SPARK_VERSION")
+  "org.apache.spark" %% "spark-streaming" % "1.1.0" % "provided",
+  "org.apache.spark" %% "spark-streaming-kafka" % "1.1.0"
 )
 
 assemblySettings
